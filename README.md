@@ -18,6 +18,7 @@
 ### Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
+
 `https://github.com/AigulParamonova/infra_sp2.git`
 
 `cd infra_sp2`
@@ -25,21 +26,29 @@
 В корневой директории проекта расположен файл .env.example, в котором описаны примеры переменных и их значений.
 
 Запуск контейнера:
+
 `docker-compose up`
 
 Пересборка контейнера и запуск:
+
 `docker-compose up -d --build`
 
 Заполнение базы данными:
+
 `docker-compose exec web python manage.py makemigrations --noinput`
+
 `docker-compose exec web python manage.py migrate --noinput`
+
 `docker-compose exec web python manage.py createsuperuser`
+
 `docker-compose exec web python manage.py collectstatic --no-input`
 
 Создайте резервную копию БД:
+
 `docker-compose exec web python manage.py dumpdata > fixtures.json`
 
 Документация API YaMDb по адресу:
+
 `http://127.0.0.1:8000/redoc/`
 
 ### Технологии:
